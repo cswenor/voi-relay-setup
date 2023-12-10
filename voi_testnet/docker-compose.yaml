@@ -1,0 +1,61 @@
+version: "3.4"
+services:
+  nodevoit:
+    container_name: node-voitnet-catchup
+    image: urtho/algod-voitest-rly:latest
+    volumes:
+      - type: bind
+        source: /mnt/nodevoit
+        target: /node/data/voitest-v1
+      - type: bind
+        source: ./node/config.json
+        target: /node/data/config.json
+      - type: bind
+        source: ./node/algod.token
+        target: /node/data/algod.token
+      - type: bind
+        source: ./node/logging.config
+        target: /node/data/logging.config
+    restart: always
+    entrypoint:
+      - "/node/algod"
+      - "-d"
+      - "/node/data"
+    network_mode: host
+  node-exporter:
+    container_name: node-exporter
+    image: urtho/algod-voitest-rly:latest
+    network_mode: host
+    restart: always
+    environment:
+      - GOGC=25
+    entrypoint:
+      - "/node/node_exporter"
+      - "--no-collector.arp"
+      - "--no-collector.bcache"
+      - "--no-collector.bonding"
+      - "--no-collector.buddyinfo"
+      - "--no-collector.conntrack"
+      - "--no-collector.drbd"
+      - "--no-collector.edac"
+      - "--no-collector.entropy"
+      - "--no-collector.hwmon"
+      - "--no-collector.infiniband"
+      - "--no-collector.interrupts"
+      - "--no-collector.ipvs"
+      - "--no-collector.ksmd"
+      - "--no-collector.logind"
+      - "--no-collector.mdadm"
+      - "--no-collector.meminfo_numa"
+      - "--no-collector.mountstats"
+      - "--no-collector.nfs"
+      - "--no-collector.nfsd"
+      - "--no-collector.qdisc"
+      - "--no-collector.runit"
+      - "--no-collector.supervisord"
+      - "--no-collector.systemd"
+      - "--no-collector.tcpstat"
+      - "--no-collector.timex"
+      - "--no-collector.wifi"
+      - "--no-collector.xfs"
+      - "--no-collector.zfs"
