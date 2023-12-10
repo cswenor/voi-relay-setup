@@ -1,4 +1,4 @@
-## Install Docker
+# Setup Voi Relay Node(Docker)
 ### Add Docker's official GPG key:
 ```
 sudo apt-get update
