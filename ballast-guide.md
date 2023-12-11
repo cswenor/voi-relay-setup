@@ -178,19 +178,18 @@ In your home directory (same as yaml file) create the following file and paste t
 {
   "algod-api": {
     "address": "https://testnet-api.voi.nodly.io",
-    "token": ""// Get from earlier algod.token file
+    "token": ""
   },
   "av-api": {
     "address": "https://analytics.testnet.voi.nodly.io",
     "token": ""
   },
   "pkeys": {
-    "EQBOT": "25 word mnemonic" //Mnemonic of the Master Account
+    "EQBOT": "Mnemonic of the Master Account"
   }
   "equalizer": {
-    "interval": 10, // equalize every interval seconds
-    "target": 60, // keep the ballast at this level 
-                  // accounts for an extra WHALE buffer consisting of top 10 accounts that are not whitelisted
+    "interval": 10,
+    "target": 60,
     "upfactor": 1.0,
     "downfactor": 0.2,
   },
