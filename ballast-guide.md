@@ -74,26 +74,6 @@ sudo nano FILENAME
 }
 ```
 
-##### logging.config content
-*Make sure you change the GUID in the `logging.config` file, you can create a new GUID with [this tool](https://guidgenerator.com/).*
-```
-{
-    "Enable": true,
-    "SendToLog": false,
-    "URI": "",
-    "Name": "UNIQUENAME",
-    "GUID": "UNIQUEGUID",
-    "FilePath": "",
-    "UserName": "",
-    "Password": "",
-    "MinLogLevel": 3,
-    "ReportHistoryLevel": 3
-}
-```
-
-##### algod.token content
-*Make sure you change the text in the `algod.token` file, you can create a new hash with [this tool](https://emn178.github.io/online-tools/sha256.html). You can just type in random characters into the input.*
-
 #### Server Files
 Go back to your home directory
 ```
