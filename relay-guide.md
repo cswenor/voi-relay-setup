@@ -63,7 +63,7 @@ docker pull urtho/algod-voitest-rly
 ```
 ### Standup Server
 ```
-docker-compose up -d
+docker compose up -d
 ```
 ### Catchup Server
 ```
