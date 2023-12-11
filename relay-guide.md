@@ -38,16 +38,55 @@ newgrp docker
 ```
 mkdir ~/node
 ```
-### Copy Node Files
-Copy in config.json, logging.config, and algod.token to the ~/node folder.
-Copy docker-compose.yaml, goal.sh, and catchup.sh to your home directory.
+### Create Node Files
+Enter your newly created `node` folder.
 
-*You have to generate a new sha-256 hash for algod.token and a new guid for logging.config*
+```
+cd node
+```
 
-EXAMPLE
+Create the following 3 files:
+
 ```
-scp -r -P 2020 ./voit_testnet user@remote_server:~
+sudo touch config.json
+sudo touch logging.config
+sudo touch algod.token
 ```
+
+Copy into these files the contents of config.json, logging.config, and algod.token in the `voi_testnet/node` folder in this repo. 
+
+*Make sure you change the GUID in the `logging.config` file, you can create a new GUID with [this tool](https://guidgenerator.com/).*
+
+*Make sure you change the text in the `algod.token` file, you can create a new hash with [this tool](https://emn178.github.io/online-tools/sha256.html). You can just type in random characters into the input.*
+
+You can use the following to edit a file
+
+```
+sudo nano FILENAME
+```
+
+Go back to your home directory 
+
+```
+cd
+```
+
+Create the following 3 files:
+
+```
+sudo touch catchup.sh
+sudo touch goal.sh
+sudo touch docker-compose.yaml
+```
+
+Copy into these files the contents of docker-compose.yaml, goal.sh, and catchup.sh in the `voi_testnet` folder in this repo.
+
+You can use the following to edit a file
+
+```
+sudo nano FILENAME
+```
+
 ### Make Bash files Executable
 ```
 chmod +x ~/catchup.sh
