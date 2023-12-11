@@ -1,6 +1,6 @@
 
 
-# Setup Voi Relay Node(Docker)
+# Setup Voi Ballast Node(Docker)
 
 ### Secure your server
  Follow [this guide](https://help.ovhcloud.com/csm/en-gb-dedicated-servers-securing-server?id=kb_article_view&sysparm_article=KB0043969).
@@ -57,8 +57,6 @@ Create the following 3 files:
 
 ```
 sudo touch config.json
-sudo touch logging.config
-sudo touch algod.token
 ```
 User nano to edit these files:
 ```
