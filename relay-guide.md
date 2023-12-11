@@ -23,7 +23,6 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ```
 sudo apt-get update
 sudo apt-get install docker-compose-plugin
-sudo apt-get install docker-compose
 ```
 ### Install jq
 ```
@@ -64,7 +63,7 @@ docker pull urtho/algod-voitest-rly
 ```
 ### Standup Server
 ```
-docker-compose up -d
+Docker compose up -d
 ```
 ### Catchup Server
 ```
