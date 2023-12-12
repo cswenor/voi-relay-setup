@@ -196,7 +196,7 @@ In your home directory (same as yaml file) create the following file and paste t
   }
   "equalizer": {
     "interval": 10,
-    "target": 60,
+    "target": 40,
     "upfactor": 1.0,
     "downfactor": 0.2,
   },
