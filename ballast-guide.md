@@ -273,9 +273,17 @@ echo OK`
 
 #### Generate Part Key Locally
 
+Create a new directory to store your part keys
+
+`mkdir partkeys`
+
+You may wish to name the partkeys based on which geography the ballast node will be located in so you can identify them easier and the corresponding account that will register with them.
+
 `./algokey part generate --first FIRSTROUND --last LASTROUND --parent PUBLICADDRESS --keyfile KEYFILENAME`
 
 #### Copy Part Key To Remote Server
+
+Make sure you copy the right partkey for the right server depending on which account will be used in that servers node.
 
 `sudo scp -P REMOTEPORTNUMBER KEYFILENAME REMOTEUSERNAME@REMOTEIPADDRESS:/home/REMOTEUSERNAME`
 
