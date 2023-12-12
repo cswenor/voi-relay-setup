@@ -124,9 +124,6 @@ services:
       - type: bind
         source: ./node/config.json
         target: /node/data/config.json
-      - type: bind
-        source: ./partkey
-        target: /partkey
     restart: always
     entrypoint:
       - "/node/algod"
