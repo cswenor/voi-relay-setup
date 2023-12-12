@@ -35,7 +35,6 @@ sudo apt-get install docker-compose-plugin
 ```
 ### Install jq
 ```
-Install jq
 sudo apt install jq
 ```
 ### Setup permissions
@@ -174,8 +173,6 @@ docker pull urtho/voibot
 Create 3 ballast accounts each with a public address ending in "2VOI".
 #### Create Master Account
 Create an account to manage the ballast accounts. 
-#### Rekey  Ballast accounts to Master Account
-Rekey the 3 ballast accounts to the manager account. This can be done with A-Wallet.
 #### Send Urtho Information
 Send the public addresses to Urtho (urtho@algonode.io)
 
