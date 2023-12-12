@@ -125,6 +125,11 @@ services:
         source: ./node/config.json
         target: /node/data/config.json
     restart: always
+    entrypoint:
+      - "/node/algod"
+      - "-d"
+      - "/node/data"
+    network_mode: host
 ```
 
 ###### Ballast Node Only
@@ -142,6 +147,11 @@ services:
         source: ./node/config.json
         target: /node/data/config.json
     restart: always
+    entrypoint:
+      - "/node/algod"
+      - "-d"
+      - "/node/data"
+    network_mode: host
 ```
 
 ### Make Bash files Executable
