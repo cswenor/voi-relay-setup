@@ -313,7 +313,7 @@ List account to see if works
 
 Make sure local node is running
 
-'./goal node start'
+`./goal node start`
 
 Install part key
 
