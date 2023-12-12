@@ -246,15 +246,15 @@ touch algod-out.log
 
 Go to the 'node' directory
 
-'cd ~/node`
+`cd ~/node`
 
 Start your node 
 
-'./goal node start'
+`./goal node start`
 
 Check it's connected to Voi
 
-'./goal node status'
+`./goal node status`
 
 You should see the following:
 
@@ -265,7 +265,7 @@ Genesis hash: IXnoWtviVVJW5LGivNFc0Dq14V3kqaXuK2u5OQrdVZo=
 
 Stop your node 
 
-'./goal node stop'
+`./goal node stop`
 
 #### Generate Part Key Locally
 
