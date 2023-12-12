@@ -264,6 +264,13 @@ Stop your node
 
 `./goal node stop`
 
+You may wish to not stop your node and allow it to catchup while you work through the next steps so you can submit the transaction to register the accounts online later without having to wait.
+
+You can use the following to speed it up if you have `jq` installed.
+
+`goal node catchup $(curl -s https://testnet-api.voi.nodly.io/v2/status|jq -r '.["last-catchpoint"]') &&\
+echo OK`
+
 #### Generate Part Key Locally
 
 `./algokey part generate --first FIRSTROUND --last LASTROUND --parent PUBLICADDRESS --keyfile KEYFILENAME`
