@@ -356,3 +356,7 @@ docker compose up -d
 ```
 ~/goal.sh node status
 ```
+
+### Rekey Accounts
+Rekey all ballast accounts to the master account.
+
