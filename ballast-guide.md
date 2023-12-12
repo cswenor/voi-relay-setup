@@ -124,6 +124,9 @@ services:
       - type: bind
         source: ./node/config.json
         target: /node/data/config.json
+      - type: bind
+        source: ./partkey
+        target: /partkey
     restart: always
     entrypoint:
       - "/node/algod"
@@ -208,6 +211,21 @@ In your home directory (same as yaml file) create the following file and paste t
   }
 }
 ```
+### Create Part Keys
+
+#### Install software locally
+
+Install in home directory
+https://developer.algorand.org/docs/run-a-node/setup/install/#installation-with-the-updater-script
+
+#### Generate Part Key
+
+`./algokey part generate --first FIRSTROUND --last LASTROUND --parent PUBLICADDRESS --keyfile KEYFILENAME`
+
+#### Copy Part Key To Remote Server
+
+`sudo scp -P REMOTEPORTNUMBER KEYFILENAME REMOTEUSERNAME@REMOTEIPADDRESS:/home/REMOTEUSERNAME`
+
 ### Standup Server
 ```
 docker compose up -d
