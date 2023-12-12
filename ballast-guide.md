@@ -211,20 +211,126 @@ In your home directory (same as yaml file) create the following file and paste t
   }
 }
 ```
-### Create Part Keys
+### Create, Install Part Keys & Register Online
 
 #### Install software locally
 
 Install in home directory
 https://developer.algorand.org/docs/run-a-node/setup/install/#installation-with-the-updater-script
 
-#### Generate Part Key
+#### Configure your node for Voi
+
+Go into your new node folder in your home directory and create a `data` directory if it doesn't exist already. 
+
+`cd ~/node/data`
+
+Create a config.json file with the following:
+
+```
+{
+	"DNSBootstrapID": "<network>.voi.network",
+	"EnableCatchupFromArchiveServers": true
+}
+```
+
+Overwrite genesis file in this same data directory:
+
+`sudo curl -s -o genesis.json https://testnet-api.voi.nodly.io/genesis `
+
+Create logging files in same data directory
+
+```
+touch algod-err.log
+touch algod-out.log
+```
+
+Go to the 'node' directory
+
+'cd ~/node`
+
+Start your node 
+
+'./goal node start'
+
+Check it's connected to Voi
+
+'./goal node status'
+
+You should see the following:
+
+```
+Genesis ID: voitest-v1
+Genesis hash: IXnoWtviVVJW5LGivNFc0Dq14V3kqaXuK2u5OQrdVZo=
+```
+
+Stop your node 
+
+'./goal node stop'
+
+#### Generate Part Key Locally
 
 `./algokey part generate --first FIRSTROUND --last LASTROUND --parent PUBLICADDRESS --keyfile KEYFILENAME`
 
 #### Copy Part Key To Remote Server
 
 `sudo scp -P REMOTEPORTNUMBER KEYFILENAME REMOTEUSERNAME@REMOTEIPADDRESS:/home/REMOTEUSERNAME`
+
+#### Move key to correct directory and rename
+
+You should now be in your remote servers terminal
+
+`sudo mv KEYFILENAME /mnt/voitest-v1/partkey`
+
+#### Install partkey
+
+`./goal.sh account installpartkey --delete-input --partkey /node/data/voitest-v1/partkey`
+
+#### Confirm installed correctly
+
+`./goal.sh account listpartkeys` 
+
+You should see it list your account you created the partkey with against the partkey
+
+#### Register online with the key locally
+
+We should now swap back to our local machine to register the account as online.
+
+##### Create Local Wallet
+
+Create your local walled using KMD
+
+`./goal wallet new voi`
+
+Import your ballast and master accounts
+
+`goal account import`
+
+List account to see if works
+
+`goal account list`
+
+##### Install partkey Locally
+
+Make sure local node is running
+
+'./goal node start'
+
+Install part key
+
+`./goal account installpartkey --delete-input --partkey partkeys/KEYFILENAME`
+
+##### Go Online
+
+Wait for local node to be in sync.
+
+You can use the following to speed it up if you have `jq` installed.
+
+`goal node catchup $(curl -s https://testnet-api.voi.nodly.io/v2/status|jq -r '.["last-catchpoint"]') &&\
+echo OK`
+
+When in sync, run the following.
+
+`./goal account changeonlinestatus -a PUBLICADDRESS -o=1`
 
 ### Standup Server
 ```
