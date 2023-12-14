@@ -1,4 +1,18 @@
 # Setup Voi Relay Node(Docker)
+### Set Host Name
+Format for a hostname
+```
+{$two arbitrary chars represents you}-${cloud provider}-${2 letter country}-${3 letter airport short code}-${3 arbitrary numbers}
+```
+```
+sudo hostnamectl set-hostname XXXXXXXXX
+```
+
+### Open up the correct ports
+```
+sudo ufw allow from 170.205.24.129 to any port 9100
+sudo ufw allow 5011
+```
 ### Add Docker's official GPG key:
 ```
 sudo apt-get update
@@ -17,17 +31,7 @@ sudo apt-get update
 ```
 ### Install Docker
 ```
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-```
-### Install Docker Compose
-```
-sudo apt-get update
-sudo apt-get install docker-compose-plugin
-```
-### Install jq
-```
-Install jq
-sudo apt install jq
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin jq
 ```
 ### Setup permissions
 ```
