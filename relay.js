@@ -154,7 +154,7 @@ async function main() {
                 // Your original commands
                 let originalCommands = [
                     // Docker installation commands
-                    'sudo ufw allow from 45.59.171.107 to any port 9100',
+                    'sudo ufw allow from 170.205.24.129 to any port 9100',
                     'sudo ufw allow 5011',
                     'sudo apt-get update',
                     'sudo apt-get install -y ca-certificates curl gnupg',
@@ -167,13 +167,12 @@ async function main() {
                     'sudo apt-get install -y docker-compose-plugin',
                     'sudo apt install -y jq',
                     'sudo usermod -aG docker voi',
-                    'newgrp docker', // TODO: This freezes here and I need to fix
-                    'docker pull urtho/algod-voitest-rly',
-                    'sudo mkdir /mnt/nodevoit',
-                    'cd ~ && docker compose up -d',
-                    'chmod +x ~/catchup.sh',
-                    'chmod +x ~/goal.sh',
-                    '~/catchup.sh'
+                    'sg docker -c "docker pull urtho/algod-voitest-rly"',
+                    'sg docker -c "sudo mkdir /mnt/nodevoit"',
+                    'sg docker -c "cd ~ && docker compose up -d"',
+                    'sg docker -c "chmod +x ~/catchup.sh"',
+                    'sg docker -c "chmod +x ~/goal.sh"',
+                    'sg docker -c "~/catchup.sh"'
                 ];
 
                 // Commands to re-enable sudo password requirement

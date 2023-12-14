@@ -4,7 +4,7 @@
     "GossipFanout": 8,
     "NetAddress": "0.0.0.0:5011",
     "MaxConnectionsPerIP": 2,
-    "IncomingConnectionsLimit": 75,
+    "IncomingConnectionsLimit": 90,
     "DNSBootstrapID": "<network>.voi.network",
     "EnableMetricReporting": true,
     "EnableLedgerService": true,

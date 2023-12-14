@@ -2,3 +2,5 @@
 node_modules
 package-lock.json
 serverDetails.json
+voi_testnet/node/algod.token
+voi_testnet/node/logging.config
