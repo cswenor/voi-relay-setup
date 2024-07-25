@@ -8,5 +8,8 @@
     "DNSBootstrapID": "<network>.voi.network",
     "EnableMetricReporting": true,
     "EnableLedgerService": true,
-    "EnableBlockService": true
+    "EnableBlockService": true,
+    "CatchpointFileHistoryLength": 3,
+    "CatchpointTracking": 2,
+    "MaxBlockHistoryLookback": 22000
 }
