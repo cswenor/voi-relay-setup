@@ -193,7 +193,7 @@ In your home directory (same as yaml file) create the following file and paste t
   },
   "pkeys": {
     "EQBOT": "Mnemonic of the Master Account"
-  }
+  },
   "equalizer": {
     "interval": 10,
     "target": 40,
